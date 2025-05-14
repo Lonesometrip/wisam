@@ -23,8 +23,8 @@ export default defineConfig(({ command }) => {
     // Development mode - use root path
     config.base = '/';
   } else {
-    // Production mode - use GitHub Pages path
-    config.base = '/affirmation/';
+    // Production mode - use root path for custom domain
+    config.base = '/';
   }
 
   return config;
