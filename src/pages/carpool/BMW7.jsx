@@ -6,6 +6,8 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 import { fadeIn, textVariant } from '../../utils/motion';
+import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 import CanvasLoader from '../../components/Loader';
 import '../../styles/carpool.css';
@@ -19,8 +21,8 @@ const BMW7Model = () => {
 
   // Ensure consistent size during loading
   React.useEffect(() => {
-    // Set a fixed size for the model to prevent size changes during loading
-    scene.scale.set(0.7, 0.7, 0.7);
+    // Set a fixed size for the model to prevent size changes during loading - reduced size
+    scene.scale.set(0.5, 0.5, 0.5);
   }, [scene]);
 
   // Apply optimizations for sharper, clearer rendering
@@ -81,8 +83,8 @@ const BMW7Model = () => {
       {/* Optimized model with better camera angle - made consistently smaller */}
       <primitive
         object={scene}
-        scale={0.7} // Further reduced scale for consistent smaller size
-        position={[0, -0.8, 0]} // Maintaining the higher position
+        scale={0.5} // Further reduced scale for consistent smaller size
+        position={[0, -0.5, 0]} // Moved 3cm higher (from -0.8 to -0.5)
         rotation={[0, Math.PI / 4, 0]} // 45-degree angle for dynamic view
         userData={{ keepSize: true }} // Flag to maintain consistent size
       />
@@ -91,6 +93,8 @@ const BMW7Model = () => {
 };
 
 const BMW7 = () => {
+  const { t } = useTranslation();
+  const { language } = useLanguage();
   const [isMobile, setIsMobile] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -137,10 +141,14 @@ const BMW7 = () => {
       <div className={`${styles.padding} max-w-7xl mx-auto relative z-0`}>
         <motion.div variants={fadeIn('', '', 0.1, 1)} className="carpool-frame">
           <motion.div variants={textVariant()} className="carpool-header">
-            <p className="carpool-subtitle">Premium Vehicle</p>
-            <h2 className="carpool-title">BMW 7 Series</h2>
+            <p className="carpool-subtitle">
+              {language === 'ar' ? t('common.premiumVehicle') : 'Premium Vehicle'}
+            </p>
+            <h2 className="carpool-title">
+              {language === 'ar' ? t('vehicles.bmw-7.title') : 'BMW 7 Series'}
+            </h2>
             <p className="carpool-description">
-              The perfect fusion of luxury and driving dynamics with exceptional comfort.
+              {language === 'ar' ? t('vehicles.bmw-7.description') : 'The perfect fusion of luxury and driving dynamics with exceptional comfort.'}
             </p>
           </motion.div>
 
@@ -190,7 +198,9 @@ const BMW7 = () => {
           variants={fadeIn('', '', 0.2, 1)}
           className="car-info-section"
         >
-          <h3 className="section-title">Gallery</h3>
+          <h3 className="section-title">
+            {language === 'ar' ? t('vehicles.bmw-7.gallery') : 'Gallery'}
+          </h3>
           <div className="modern-gallery-container">
             {/* Main large image */}
             <div className="modern-gallery-main" onClick={toggleFullscreen}>
@@ -200,7 +210,7 @@ const BMW7 = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
                 src={images[activeImage]}
-                alt="BMW 7 Series Featured"
+                alt={language === 'ar' ? t('vehicles.bmw-7.title') : 'BMW 7 Series Featured'}
                 onError={(e) => {
                   e.target.onerror = null;
                   e.target.src = fallbackImage;
@@ -218,7 +228,9 @@ const BMW7 = () => {
                 >
                   <img
                     src={image}
-                    alt={`BMW 7 Series ${index + 1}`}
+                    alt={language === 'ar'
+                      ? `${t('vehicles.bmw-7.title')} ${index + 1}`
+                      : `BMW 7 Series ${index + 1}`}
                     onError={(e) => {
                       e.target.onerror = null;
                       e.target.src = fallbackImage;
@@ -245,7 +257,7 @@ const BMW7 = () => {
                   </button>
                   <img
                     src={images[activeImage]}
-                    alt="BMW 7 Series Fullscreen"
+                    alt={language === 'ar' ? t('vehicles.bmw-7.title') : 'BMW 7 Series Fullscreen'}
                     className="max-h-[80vh] w-auto mx-auto object-cover p-2"
                     onError={(e) => {
                       e.target.onerror = null;
@@ -264,7 +276,9 @@ const BMW7 = () => {
                       >
                         <img
                           src={image}
-                          alt={`BMW 7 Series Thumbnail ${index + 1}`}
+                          alt={language === 'ar'
+                            ? `${t('vehicles.bmw-7.title')} ${index + 1}`
+                            : `BMW 7 Series Thumbnail ${index + 1}`}
                           className="w-full h-full object-cover"
                           onError={(e) => {
                             e.target.onerror = null;
@@ -282,47 +296,77 @@ const BMW7 = () => {
 
         <div className="cta-container">
           <div className="car-info-section">
-            <h3 className="section-title">Premium Services & Driving Luxury</h3>
+            <h3 className="section-title">
+              {language === 'ar' ? t('vehicles.bmw-7.premium-services') : 'Premium Services & Driving Luxury'}
+            </h3>
             <div className="specs-grid mb-6">
               <div className="specs-category">
                 <ul className="specs-list">
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> Professional chauffeur service
-                  </li>
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> Complimentary Wi-Fi onboard
-                  </li>
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> Premium refreshments
-                  </li>
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> Daily newspapers and magazines
-                  </li>
+                  {language === 'ar' ? (
+                    // Arabic services list (first half)
+                    t('vehicles.bmw-7.services-list', { returnObjects: true })
+                      .slice(0, 4)
+                      .map((service, index) => (
+                        <li key={index} className="specs-item">
+                          <span className="specs-item-icon">•</span> {service}
+                        </li>
+                      ))
+                  ) : (
+                    // English services list (first half)
+                    <>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> Professional chauffeur service
+                      </li>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> Complimentary Wi-Fi onboard
+                      </li>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> Premium refreshments
+                      </li>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> Daily newspapers and magazines
+                      </li>
+                    </>
+                  )}
                 </ul>
               </div>
               <div className="specs-category">
                 <ul className="specs-list">
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> BMW iDrive system with gesture control
-                  </li>
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> Bowers & Wilkins Diamond Surround Sound System
-                  </li>
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> Panoramic Sky Lounge LED roof
-                  </li>
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> Rear-seat entertainment system with touch command tablet
-                  </li>
+                  {language === 'ar' ? (
+                    // Arabic services list (second half)
+                    t('vehicles.bmw-7.services-list', { returnObjects: true })
+                      .slice(4)
+                      .map((service, index) => (
+                        <li key={index + 4} className="specs-item">
+                          <span className="specs-item-icon">•</span> {service}
+                        </li>
+                      ))
+                  ) : (
+                    // English services list (second half)
+                    <>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> BMW iDrive system with gesture control
+                      </li>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> Bowers & Wilkins Diamond Surround Sound System
+                      </li>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> Panoramic Sky Lounge LED roof
+                      </li>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> Rear-seat entertainment system with touch command tablet
+                      </li>
+                    </>
+                  )}
                 </ul>
               </div>
             </div>
             <p className="section-content">
-              Book your premium BMW 7 Series chauffeur service today and enjoy the perfect blend of performance and luxury.
+              {language === 'ar' ? t('vehicles.bmw-7.book-cta') : 'Book your premium BMW 7 Series chauffeur service today and enjoy the perfect blend of performance and luxury.'}
             </p>
             <div className="flex justify-center mt-6">
               <Link to="/contact" className="cta-button">
-                Book Now
+                {language === 'ar' ? t('common.bookNow') : 'Book Now'}
               </Link>
             </div>
           </div>

@@ -23,8 +23,13 @@ const callOpenRouterAPI = async (messages, systemPrompt = null, setAiConnectedFn
     // Add conversation messages
     formattedMessages.push(...messages);
 
-    // Call OpenRouter API via Cloudflare Worker
-    const CLOUDFLARE_WORKER_URL = "https://mouhcine.benmotrade.workers.dev/";
+    // Call OpenRouter API via Cloudflare Worker - using environment variable
+    const CLOUDFLARE_WORKER_URL = import.meta.env.VITE_CLOUDFLARE_WORKER_URL || "";
+
+    if (!CLOUDFLARE_WORKER_URL) {
+      console.error("Cloudflare Worker URL not configured");
+      throw new Error("API endpoint not configured");
+    }
 
     const response = await fetch(CLOUDFLARE_WORKER_URL, {
       method: "POST",

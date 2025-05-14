@@ -147,13 +147,16 @@ jobs:
 
 ## Connecting the Chatbot to the Worker
 
-### Step 1: Update the Worker URL
+### Step 1: Set Up Environment Variables
 
-1. Open `y_website/src/components/ChatBot/PocketFlowChatBot.jsx`
-2. Update the `CLOUDFLARE_WORKER_URL` variable with your actual Cloudflare Worker URL:
-   ```javascript
-   const CLOUDFLARE_WORKER_URL = "https://openrouter-proxy.yourusername.workers.dev";
+1. Create a `.env` file in the project root (or copy from `.env.example`)
+2. Add your Cloudflare Worker URL:
    ```
+   VITE_CLOUDFLARE_WORKER_URL=https://your-worker-name.yourusername.workers.dev
+   ```
+3. The application will automatically use this environment variable for API calls
+
+> **IMPORTANT**: Never commit your `.env` file to the repository as it may contain sensitive information. The `.env` file is already added to `.gitignore`.
 
 ### Step 2: Commit and Push Changes
 

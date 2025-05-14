@@ -43,14 +43,16 @@ const resources = {
         "bauernhofe-desc": "Experience authentic German farm life and rural traditions."
       },
       "hero": {
-        "title": "PREMIUM CHAUFFEUR",
-        "subtitle": "Your Partner for Luxury Travel",
+        "title": "PREMIUM CHAUFFEUR SERVICE",
+        "subtitle": "Ihr Partner für exklusiven Limousinenservice",
         "typewriter": [
-          "Luxury Travel",
-          "Business Trips",
-          "Airport Transfers",
-          "VIP Service",
-          "City Tours"
+          "Luxus Limousinenservice",
+          "Business Chauffeur Service",
+          "Executive Transfer Service",
+          "VIP Chauffeur Service",
+          "Airport Transfer Service",
+          "Mercedes S-Klasse mit Fahrer",
+          "24h Premium Fahrservice"
         ]
       },
       "footer": {
@@ -142,19 +144,61 @@ const resources = {
           "title": "Mercedes S-Class",
           "subtitle": "Premium Vehicle",
           "cta-title": "Ready to Experience Luxury?",
-          "cta-description": "Book your premium Mercedes S-Class chauffeur service today and enjoy the ultimate in comfort and style."
+          "cta-description": "Book your premium Mercedes S-Class chauffeur service today and enjoy the ultimate in comfort and style.",
+          "description": "The pinnacle of luxury sedans, offering unparalleled comfort and sophisticated design.",
+          "gallery": "Gallery",
+          "premium-services": "Premium Services & Luxury Experience",
+          "services-list": [
+            "Professional chauffeur service",
+            "Complimentary Wi-Fi onboard",
+            "Premium refreshments",
+            "Daily newspapers and magazines",
+            "Advanced driver assistance systems for maximum safety",
+            "Premium Burmester® surround sound system",
+            "Ambient lighting with 64 colors",
+            "Spacious cabin with executive rear seating"
+          ],
+          "book-cta": "Book your premium Mercedes S-Class chauffeur service today and enjoy the ultimate in comfort and style."
         },
         "bmw-7": {
           "title": "BMW 7 Series",
           "subtitle": "Premium Vehicle",
           "cta-title": "Experience Ultimate Driving Luxury",
-          "cta-description": "Book your premium BMW 7 Series chauffeur service today and enjoy the perfect blend of performance and luxury."
+          "cta-description": "Book your premium BMW 7 Series chauffeur service today and enjoy the perfect blend of performance and luxury.",
+          "description": "Executive luxury sedan combining advanced technology with exceptional comfort.",
+          "gallery": "Gallery",
+          "premium-services": "Premium Services & Luxury Experience",
+          "services-list": [
+            "Professional chauffeur service",
+            "Complimentary Wi-Fi onboard",
+            "Premium refreshments",
+            "Daily newspapers and magazines",
+            "Advanced technology and driver assistance features",
+            "Premium entertainment system",
+            "Spacious cabin with premium amenities",
+            "Powerful performance with sophisticated driving dynamics"
+          ],
+          "book-cta": "Book your premium BMW 7 Series chauffeur service today and enjoy the perfect blend of performance and luxury."
         },
         "mercedes-vclass": {
           "title": "Mercedes V-Class",
           "subtitle": "Premium Vehicle",
           "cta-title": "Perfect for Group Travel",
-          "cta-description": "Book your premium Mercedes V-Class chauffeur service today and enjoy spacious luxury for your group or family."
+          "cta-description": "Book your premium Mercedes V-Class chauffeur service today and enjoy spacious luxury for your group or family.",
+          "description": "Spacious luxury MPV perfect for group travel with exceptional comfort.",
+          "gallery": "Gallery",
+          "premium-services": "Premium Services & Group Travel",
+          "services-list": [
+            "Professional chauffeur service",
+            "Complimentary Wi-Fi onboard",
+            "Premium refreshments",
+            "Daily newspapers and magazines",
+            "Premium leather upholstery with ambient lighting",
+            "Burmester® surround sound system",
+            "Panoramic sliding sunroof",
+            "Electric sliding doors for easy access"
+          ],
+          "book-cta": "Book your premium Mercedes V-Class chauffeur service today and enjoy spacious luxury for your group or family."
         }
       },
       "service-details": {
@@ -458,57 +502,78 @@ const resources = {
             "Visit traditional farms, vineyards, and countryside attractions with luxury transportation.",
             "Enjoy farm-to-table dining experiences and local product shopping with convenient transportation."
           ]
-        }
+        },
+        "why_choose_title": "Why Choose Our Tourism Services?",
+        "customized_experiences": "Customized Experiences",
+        "customized_experiences_desc": "We tailor each journey to your unique needs and preferences to ensure an unforgettable experience.",
+        "professional_guides": "Professional Guides",
+        "professional_guides_desc": "Our multilingual professional guides ensure a rich and enjoyable cultural experience.",
+        "luxury_transportation": "Luxury Transportation",
+        "luxury_transportation_desc": "Enjoy comfort and elegance with our fleet of luxury vehicles and professional chauffeurs.",
+        "ready_to_book": "Ready to Explore Europe in Style?",
+        "booking_description": "Contact us today to book your tourism package and enjoy an unparalleled travel experience."
       }
     }
   },
   ar: {
     translation: {
       "navbar": {
-        "carpool": "تجمع السيارات",
+        "carpool": "أسطول السيارات",
         "services": "الخدمات",
         "tourism": "السياحة",
         "contact": "اتصل بنا"
       },
       "carpool": {
-        "title": "تجمع السيارات",
+        "title": "أسطولنا الفاخر",
         "subtitle": "سيارات فاخرة",
-        "description": "توفر خدمة تجمع السيارات الفاخرة لدينا خيارات نقل مريحة وموثوقة لمجموعات من جميع الأحجام. سواء كنت مسافرًا للعمل أو للترفيه، فإن أسطولنا من السيارات الفاخرة يضمن رحلة سلسة وممتعة. نحن نعطي الأولوية للسلامة والدقة في المواعيد ورضا العملاء في كل رحلة.",
+        "description": "توفر خدمة السائق الفاخر لدينا خيارات نقل مريحة وموثوقة لمجموعات من جميع الأحجام. سواء كنت مسافرًا للعمل أو للترفيه، فإن أسطولنا من السيارات الفاخرة يضمن رحلة سلسة وممتعة. نحن نعطي الأولوية للسلامة والدقة في المواعيد ورضا العملاء في كل رحلة.",
         "viewDetails": "انقر لعرض التفاصيل",
         "mercedes-sclass": "مرسيدس الفئة S",
-        "bmw-7": "بي إم دبليو 7",
+        "bmw-7": "بي إم دبليو الفئة 7",
         "mercedes-vclass": "مرسيدس الفئة V"
       },
       "services": {
-        "title": "خدماتنا",
-        "subtitle": "نقل فاخر",
-        "chauffeurservice": "خدمة السائق الخاص",
-        "airporttransfer": "خدمة المطار",
-        "vip-service": "خدمة كبار الشخصيات"
+        "title": "خدماتنا المميزة",
+        "subtitle": "خدمات نقل فاخرة",
+        "description": "نقدم خدمات نقل فاخرة مصممة خصيصًا لتلبية احتياجاتك. من خدمة السائق الخاص إلى خدمة المطار وخدمة كبار الشخصيات، نحن نضمن تجربة سفر استثنائية.",
+        "chauffeurservice": "خدمة سائق فاخر",
+        "airporttransfer": "خدمة نقل من المطار",
+        "vip-service": "خدمة نقل كبار الشخصيات"
       },
       "tourism": {
-        "title": "باقات السياحة",
-        "subtitle": "تجارب سفر فاخرة",
+        "title": "خدمات السياحة",
+        "subtitle": "استكشف بأناقة",
         "description": "اكتشف باقات السياحة الحصرية المصممة لتوفير تجارب لا تُنسى. تتضمن كل حزمة نقلًا فاخرًا في سياراتنا الفاخرة ومرشدين خبراء وأماكن إقامة مختارة بعناية لراحتك.",
         "exploreCategories": "استكشف فئات السياحة لدينا:",
         "beliebte-zielorte": "الوجهات الشهيرة",
-        "beliebte-zielorte-desc": "اكتشف أكثر المعالم السياحية شهرة في ألمانيا.",
-        "shoppingtours": "جولات التسوق",
-        "shoppingtours-desc": "تجارب تسوق حصرية في أفضل وجهات التجزئة في ألمانيا.",
-        "freizeitparks": "مدن الملاهي",
-        "freizeitparks-desc": "زيارة أفضل مدن الملاهي والمعالم الترفيهية في ألمانيا.",
-        "bauernhofe": "المزارع",
-        "bauernhofe-desc": "تجربة حياة المزرعة الألمانية الأصيلة والتقاليد الريفية."
+        "beliebte-zielorte-desc": "اكتشف أكثر المعالم السياحية شهرة في أوروبا مع سائق يتحدث العربية",
+        "shoppingtours": "جولات التسوق الفاخرة",
+        "shoppingtours-desc": "تجارب تسوق حصرية في أفضل وجهات التسوق الفاخرة في أوروبا",
+        "freizeitparks": "مدن الملاهي والترفيه",
+        "freizeitparks-desc": "زيارة أفضل مدن الملاهي في أوروبا مع سائق خاص",
+        "bauernhofe": "جولات ريفية",
+        "bauernhofe-desc": "تجربة حياة المزرعة الأوروبية الأصيلة والتقاليد الريفية مع سائق يتحدث العربية",
+        "why-choose-title": "لماذا تختار خدمات السياحة لدينا؟",
+        "customized-experiences": "تجارب مخصصة",
+        "customized-experiences-desc": "نصمم كل رحلة وفقًا لاحتياجاتك وتفضيلاتك الفريدة لضمان تجربة لا تُنسى.",
+        "professional-guides": "مرشدون محترفون",
+        "professional-guides-desc": "مرشدونا المحترفون متعددو اللغات يضمنون تجربة ثقافية غنية وممتعة.",
+        "luxury-transportation": "وسائل نقل فاخرة",
+        "luxury-transportation-desc": "استمتع بالراحة والأناقة مع أسطولنا من السيارات الفاخرة وسائقينا المحترفين.",
+        "ready-to-book": "هل أنت مستعد لاستكشاف أوروبا بأسلوب؟",
+        "booking-description": "اتصل بنا اليوم لحجز باقة السياحة الخاصة بك واستمتع بتجربة سفر لا مثيل لها."
       },
       "hero": {
-        "title": "سائق فاخر",
-        "subtitle": "شريكك للسفر الفاخر",
+        "title": "خدمة سائق فاخر",
+        "subtitle": "شريكك للسفر الفاخر في أوروبا",
         "typewriter": [
-          "السفر الفاخر",
-          "رحلات العمل",
-          "خدمة المطار",
-          "خدمة كبار الشخصيات",
-          "جولات المدينة"
+          "خدمة سائق فاخر في باريس",
+          "سائق فاخر في ميونخ ألمانيا",
+          "خدمة نقل كبار الشخصيات في لندن",
+          "سائق خاص في سويسرا",
+          "خدمة نقل من مطار فيينا",
+          "سائق خلال أسبوع الموضة في ميلانو",
+          "سائق لجولة في مدينة برشلونة"
         ]
       },
       "footer": {
@@ -600,19 +665,61 @@ const resources = {
           "title": "مرسيدس الفئة S",
           "subtitle": "سيارة فاخرة",
           "cta-title": "هل أنت مستعد لتجربة الفخامة؟",
-          "cta-description": "احجز خدمة السائق الخاص لمرسيدس الفئة S الفاخرة اليوم واستمتع بأقصى درجات الراحة والأناقة."
+          "cta-description": "احجز خدمة السائق الخاص لمرسيدس الفئة S الفاخرة اليوم واستمتع بأقصى درجات الراحة والأناقة.",
+          "description": "قمة سيارات السيدان الفاخرة، توفر راحة لا مثيل لها وتصميم متطور.",
+          "gallery": "معرض الصور",
+          "premium-services": "خدمات فاخرة وتجربة فخمة",
+          "services-list": [
+            "خدمة سائق محترف",
+            "واي فاي مجاني على متن السيارة",
+            "مرطبات فاخرة",
+            "صحف ومجلات يومية",
+            "أنظمة مساعدة السائق المتقدمة لأقصى درجات الأمان",
+            "نظام صوت محيطي بورميستر الفاخر",
+            "إضاءة محيطة بـ 64 لونًا",
+            "مقصورة فسيحة مع مقاعد تنفيذية خلفية"
+          ],
+          "book-cta": "احجز خدمة سائق مرسيدس الفئة S الفاخرة اليوم واستمتع بأقصى درجات الراحة والأناقة."
         },
         "bmw-7": {
-          "title": "بي إم دبليو 7",
+          "title": "بي إم دبليو الفئة 7",
           "subtitle": "سيارة فاخرة",
           "cta-title": "جرب فخامة القيادة المطلقة",
-          "cta-description": "احجز خدمة السائق الخاص لسيارة بي إم دبليو الفئة 7 الفاخرة اليوم واستمتع بمزيج مثالي من الأداء والفخامة."
+          "cta-description": "احجز خدمة السائق الخاص لسيارة بي إم دبليو الفئة 7 الفاخرة اليوم واستمتع بمزيج مثالي من الأداء والفخامة.",
+          "description": "سيارة سيدان تنفيذية فاخرة تجمع بين التكنولوجيا المتطورة والراحة الاستثنائية.",
+          "gallery": "معرض الصور",
+          "premium-services": "خدمات فاخرة وتجربة فخمة",
+          "services-list": [
+            "خدمة سائق محترف",
+            "واي فاي مجاني على متن السيارة",
+            "مرطبات فاخرة",
+            "صحف ومجلات يومية",
+            "تقنيات متطورة وميزات مساعدة السائق",
+            "نظام ترفيهي متطور",
+            "مقصورة فسيحة مع وسائل راحة متميزة",
+            "أداء قوي مع ديناميكيات قيادة متطورة"
+          ],
+          "book-cta": "احجز خدمة سائق بي إم دبليو الفئة 7 الفاخرة اليوم واستمتع بمزيج مثالي من الأداء والفخامة."
         },
         "mercedes-vclass": {
           "title": "مرسيدس الفئة V",
           "subtitle": "سيارة فاخرة",
           "cta-title": "مثالية لسفر المجموعات",
-          "cta-description": "احجز خدمة السائق الخاص لمرسيدس الفئة V الفاخرة اليوم واستمتع بالفخامة الواسعة لمجموعتك أو عائلتك."
+          "cta-description": "احجز خدمة السائق الخاص لمرسيدس الفئة V الفاخرة اليوم واستمتع بالفخامة الواسعة لمجموعتك أو عائلتك.",
+          "description": "فان فاخر يوفر مساحة واسعة وراحة استثنائية للمجموعات الصغيرة والعائلات.",
+          "gallery": "معرض الصور",
+          "premium-services": "خدمات فاخرة وتجربة فخمة",
+          "services-list": [
+            "خدمة سائق محترف",
+            "واي فاي مجاني على متن السيارة",
+            "مرطبات فاخرة",
+            "صحف ومجلات يومية",
+            "مساحة فسيحة تتسع لما يصل إلى 7 ركاب",
+            "ترتيبات مقاعد متنوعة لأقصى قدر من الراحة",
+            "مساحة أمتعة واسعة لنقل المطار أو رحلات التسوق",
+            "مثالية للسفر الجماعي مع وسائل راحة متميزة"
+          ],
+          "book-cta": "احجز خدمة سائق مرسيدس الفئة V الفاخرة اليوم واستمتع بالفخامة الواسعة لمجموعتك أو عائلتك."
         }
       },
       "service-details": {
@@ -885,17 +992,17 @@ const resources = {
           "title": "الوجهات الشهيرة",
           "subtitle": "سائق فاخر | خدمات السياحة",
           "points": [
-            "اكتشف أكثر المعالم السياحية والمعالم الأثرية شهرة في ألمانيا مع خدمات النقل الفاخرة لدينا.",
-            "زيارة المدن الشهيرة مثل برلين وميونيخ وفرانكفورت وهامبورغ مع سائق محترف.",
-            "قم بتخصيص مسار رحلتك لتشمل المواقع التاريخية والمعالم الثقافية والعجائب الطبيعية."
+            "اكتشف أكثر المعالم السياحية والمعالم الأثرية شهرة في أوروبا مع خدمات النقل الفاخرة لدينا.",
+            "زيارة المدن الشهيرة مثل برلين وميونيخ وباريس ولندن مع سائق محترف يتحدث العربية.",
+            "تخصيص مسار رحلتك لتشمل المواقع التاريخية والمعالم الثقافية والعجائب الطبيعية."
           ]
         },
         "shopping_tours": {
           "title": "جولات التسوق",
           "subtitle": "سائق فاخر | خدمات السياحة",
           "points": [
-            "تجارب تسوق حصرية في أفضل وجهات التجزئة في ألمانيا مع نقل كبار الشخصيات.",
-            "زيارة قرى الأوتليت الفاخرة ومتاجر الأقسام الفاخرة ومناطق التسوق الراقية.",
+            "تجارب تسوق حصرية في أفضل وجهات التجزئة في أوروبا مع خدمة نقل VIP.",
+            "زيارة قرى المنافذ الفاخرة ومتاجر الأقسام الفاخرة ومناطق التسوق في البوتيكات.",
             "استمتع بخدمة من الباب إلى الباب مع سائق محترف يتعامل مع جميع الخدمات اللوجستية والحقائب."
           ]
         },
@@ -903,8 +1010,8 @@ const resources = {
           "title": "مدن الملاهي",
           "subtitle": "سائق فاخر | خدمات السياحة",
           "points": [
-            "زيارة أفضل مدن الملاهي والمعالم الترفيهية في ألمانيا مع وسائل نقل فاخرة ومريحة.",
-            "تجاوز متاعب وقوف السيارات واستمتع بخدمة التوصيل والاستلام المباشرة عند المدخل.",
+            "زيارة أفضل مدن الملاهي ومعالم الجذب الترفيهية في أوروبا مع وسائل نقل فاخرة ومريحة.",
+            "تجاوز متاعب مواقف السيارات واستمتع بخدمة الإنزال والاستلام المباشرة عند المدخل.",
             "مثالية للعائلات التي لديها أطفال، مع توفر مقاعد الأطفال عند الطلب."
           ]
         },
@@ -912,11 +1019,20 @@ const resources = {
           "title": "تجارب المزارع",
           "subtitle": "سائق فاخر | خدمات السياحة",
           "points": [
-            "تجربة حياة المزرعة الألمانية الأصيلة والتقاليد الريفية مع جولاتنا المزرعية المصحوبة بمرشدين.",
-            "زيارة المزارع التقليدية وكروم العنب والمعالم الريفية مع وسائل نقل فاخرة.",
+            "استمتع بتجربة حياة المزرعة الأوروبية الأصيلة والتقاليد الريفية مع جولاتنا المصحوبة بمرشدين في المزارع.",
+            "زيارة المزارع التقليدية وكروم العنب ومعالم الجذب في الريف مع وسائل نقل فاخرة.",
             "استمتع بتجارب تناول الطعام من المزرعة إلى المائدة والتسوق للمنتجات المحلية مع وسائل نقل مريحة."
           ]
-        }
+        },
+        "why_choose_title": "لماذا تختار خدمات السياحة لدينا؟",
+        "customized_experiences": "تجارب مخصصة",
+        "customized_experiences_desc": "نصمم كل رحلة وفقًا لاحتياجاتك وتفضيلاتك الفريدة لضمان تجربة لا تُنسى.",
+        "professional_guides": "مرشدون محترفون",
+        "professional_guides_desc": "مرشدونا المحترفون متعددو اللغات يضمنون تجربة ثقافية غنية وممتعة.",
+        "luxury_transportation": "وسائل نقل فاخرة",
+        "luxury_transportation_desc": "استمتع بالراحة والأناقة مع أسطولنا من السيارات الفاخرة وسائقينا المحترفين.",
+        "ready_to_book": "هل أنت مستعد لاستكشاف أوروبا بأسلوب؟",
+        "booking_description": "اتصل بنا اليوم لحجز باقة السياحة الخاصة بك واستمتع بتجربة سفر لا مثيل لها."
       }
     }
   }
@@ -931,7 +1047,7 @@ i18n
   .init({
     resources,
     fallbackLng: 'en',
-    debug: true,
+    debug: false, // Set to false to reduce console logs
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
@@ -939,6 +1055,8 @@ i18n
       useSuspense: false,
     },
     returnObjects: true,
+    // Disable loading from backend to use in-memory translations only
+    partialBundledLanguages: true,
   });
 
 export default i18n;

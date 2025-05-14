@@ -53,13 +53,13 @@ const Hero = () => {
                 <span className="text-white">سائق</span> <span className="text-[#D4AF37]">فاخر</span>
               </span>
             ) : (
-              // English title
+              // English title with SEO keywords
               <span>
-                <span className="text-white">PREMIUM</span> <span className="text-[#D4AF37]">CHAUFFEUR</span>
+                <span className="text-white">PREMIUM</span> <span className="text-[#D4AF37]">CHAUFFEUR SERVICE</span>
               </span>
             )}
           </h1>
-          <div className={`${styles.heroSubText} mt-2 text-white-100 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] flex`}>
+          <h2 className={`${styles.heroSubText} mt-2 text-white-100 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] flex`}>
             <span className={language === 'ar' ? 'ml-2' : 'mr-2'}>{t('hero.subtitle')}</span>
             <div className="text-animation-container">
               <AnimatePresence mode="wait">
@@ -91,7 +91,15 @@ const Hero = () => {
                 )}
               </AnimatePresence>
             </div>
-          </div>
+          </h2>
+
+          {/* SEO-optimized description paragraph */}
+          <p className="mt-4 text-white-100 max-w-3xl text-[16px] sm:text-[18px] leading-relaxed">
+            {language === 'ar' ?
+              "خدمة سائق فاخر في أوروبا مع سيارات مرسيدس الفئة S وبي إم دبليو الفئة 7 ومرسيدس الفئة V. نقدم خدمات نقل رجال الأعمال، وخدمة نقل من المطار، وخدمة نقل كبار الشخصيات في جميع أنحاء أوروبا. سائق يتحدث العربية متاح على مدار الساعة لتلبية احتياجات النقل الحصرية الخاصة بك." :
+              "Luxus Limousinenservice mit Mercedes S-Klasse, BMW 7 und V-Klasse. Wir bieten Business Chauffeur Service, Airport Transfer und VIP Service in ganz Deutschland. 24/7 verfügbar für Ihre exklusiven Transportbedürfnisse."
+            }
+          </p>
 
           {/* Removed "Our Vehicles" button as requested */}
         </div>

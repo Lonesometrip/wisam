@@ -6,6 +6,8 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 import { fadeIn, textVariant } from '../../utils/motion';
+import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 import CanvasLoader from '../../components/Loader';
 import '../../styles/carpool.css';
@@ -23,8 +25,8 @@ const VClassModel = () => {
 
     // Ensure consistent size during loading
     React.useEffect(() => {
-      // Set a fixed size for the model to prevent size changes during loading
-      scene.scale.set(0.7, 0.7, 0.7);
+      // Set a fixed size for the model to prevent size changes during loading - reduced size
+      scene.scale.set(0.5, 0.5, 0.5);
     }, [scene]);
 
     // Apply optimizations for sharper, clearer rendering
@@ -85,8 +87,8 @@ const VClassModel = () => {
         {/* Optimized model with better camera angle - made consistently smaller */}
         <primitive
           object={scene}
-          scale={0.7} // Further reduced scale for consistent smaller size
-          position={[0, -0.8, 0]} // Maintaining the higher position
+          scale={0.5} // Further reduced scale for consistent smaller size
+          position={[0, -0.5, 0]} // Moved 3cm higher (from -0.8 to -0.5)
           rotation={[0, Math.PI / 4, 0]} // 45-degree angle for better view
           userData={{ keepSize: true }} // Flag to maintain consistent size
         />
@@ -110,43 +112,43 @@ const VClassModel = () => {
         <pointLight intensity={1} />
 
         {/* Van body */}
-        <group position={[0, -1.5, 0]} rotation={[0, Math.PI / 4, 0]}>
-          {/* Main body */}
+        <group position={[0, -1.2, 0]} rotation={[0, Math.PI / 4, 0]}>
+          {/* Main body - smaller size */}
           <mesh position={[0, 0, 0]}>
-            <boxGeometry args={[4, 1.8, 2.2]} />
+            <boxGeometry args={[3, 1.4, 1.8]} />
             <meshStandardMaterial color="#444444" metalness={0.8} roughness={0.2} />
           </mesh>
 
-          {/* Hood */}
-          <mesh position={[2, -0.2, 0]}>
-            <boxGeometry args={[0.8, 1.4, 2.2]} />
+          {/* Hood - smaller size */}
+          <mesh position={[1.5, -0.2, 0]}>
+            <boxGeometry args={[0.6, 1.1, 1.8]} />
             <meshStandardMaterial color="#444444" metalness={0.8} roughness={0.2} />
           </mesh>
 
-          {/* Windows */}
-          <mesh position={[0, 0.6, 0]} scale={[0.98, 0.5, 0.98]}>
-            <boxGeometry args={[4, 1, 2.2]} />
+          {/* Windows - smaller size */}
+          <mesh position={[0, 0.5, 0]} scale={[0.98, 0.5, 0.98]}>
+            <boxGeometry args={[3, 0.8, 1.8]} />
             <meshStandardMaterial color="#aaddff" metalness={0.9} roughness={0.1} />
           </mesh>
 
-          {/* Wheels */}
-          <mesh position={[1.5, -0.8, 1.2]} rotation={[Math.PI / 2, 0, 0]}>
-            <cylinderGeometry args={[0.5, 0.5, 0.3, 32]} />
+          {/* Wheels - smaller size and higher position */}
+          <mesh position={[1.2, -0.6, 1.0]} rotation={[Math.PI / 2, 0, 0]}>
+            <cylinderGeometry args={[0.4, 0.4, 0.25, 32]} />
             <meshStandardMaterial color="#111111" />
           </mesh>
 
-          <mesh position={[1.5, -0.8, -1.2]} rotation={[Math.PI / 2, 0, 0]}>
-            <cylinderGeometry args={[0.5, 0.5, 0.3, 32]} />
+          <mesh position={[1.2, -0.6, -1.0]} rotation={[Math.PI / 2, 0, 0]}>
+            <cylinderGeometry args={[0.4, 0.4, 0.25, 32]} />
             <meshStandardMaterial color="#111111" />
           </mesh>
 
-          <mesh position={[-1.5, -0.8, 1.2]} rotation={[Math.PI / 2, 0, 0]}>
-            <cylinderGeometry args={[0.5, 0.5, 0.3, 32]} />
+          <mesh position={[-1.2, -0.6, 1.0]} rotation={[Math.PI / 2, 0, 0]}>
+            <cylinderGeometry args={[0.4, 0.4, 0.25, 32]} />
             <meshStandardMaterial color="#111111" />
           </mesh>
 
-          <mesh position={[-1.5, -0.8, -1.2]} rotation={[Math.PI / 2, 0, 0]}>
-            <cylinderGeometry args={[0.5, 0.5, 0.3, 32]} />
+          <mesh position={[-1.2, -0.6, -1.0]} rotation={[Math.PI / 2, 0, 0]}>
+            <cylinderGeometry args={[0.4, 0.4, 0.25, 32]} />
             <meshStandardMaterial color="#111111" />
           </mesh>
         </group>
@@ -156,6 +158,8 @@ const VClassModel = () => {
 };
 
 const MercedesVClass = () => {
+  const { t } = useTranslation();
+  const { language } = useLanguage();
   const [isMobile, setIsMobile] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -202,10 +206,14 @@ const MercedesVClass = () => {
       <div className={`${styles.padding} max-w-7xl mx-auto relative z-0`}>
         <motion.div variants={fadeIn('', '', 0.1, 1)} className="carpool-frame">
           <motion.div variants={textVariant()} className="carpool-header">
-            <p className="carpool-subtitle">Premium Vehicle</p>
-            <h2 className="carpool-title">Mercedes V-Class</h2>
+            <p className="carpool-subtitle">
+              {language === 'ar' ? t('common.premiumVehicle') : 'Premium Vehicle'}
+            </p>
+            <h2 className="carpool-title">
+              {language === 'ar' ? t('vehicles.mercedes-vclass.title') : 'Mercedes V-Class'}
+            </h2>
             <p className="carpool-description">
-              Spacious luxury MPV perfect for group travel with exceptional comfort.
+              {language === 'ar' ? t('vehicles.mercedes-vclass.description') : 'Spacious luxury MPV perfect for group travel with exceptional comfort.'}
             </p>
           </motion.div>
 
@@ -255,7 +263,9 @@ const MercedesVClass = () => {
           variants={fadeIn('', '', 0.2, 1)}
           className="car-info-section"
         >
-          <h3 className="section-title">Gallery</h3>
+          <h3 className="section-title">
+            {language === 'ar' ? t('vehicles.mercedes-vclass.gallery') : 'Gallery'}
+          </h3>
           <div className="modern-gallery-container">
             {/* Main large image */}
             <div className="modern-gallery-main" onClick={toggleFullscreen}>
@@ -265,7 +275,7 @@ const MercedesVClass = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
                 src={images[activeImage]}
-                alt="Mercedes V-Class Featured"
+                alt={language === 'ar' ? t('vehicles.mercedes-vclass.title') : 'Mercedes V-Class Featured'}
                 onError={(e) => {
                   e.target.onerror = null;
                   e.target.src = fallbackImage;
@@ -283,7 +293,9 @@ const MercedesVClass = () => {
                 >
                   <img
                     src={image}
-                    alt={`Mercedes V-Class ${index + 1}`}
+                    alt={language === 'ar'
+                      ? `${t('vehicles.mercedes-vclass.title')} ${index + 1}`
+                      : `Mercedes V-Class ${index + 1}`}
                     onError={(e) => {
                       e.target.onerror = null;
                       e.target.src = fallbackImage;
@@ -310,7 +322,7 @@ const MercedesVClass = () => {
                   </button>
                   <img
                     src={images[activeImage]}
-                    alt="Mercedes V-Class Fullscreen"
+                    alt={language === 'ar' ? t('vehicles.mercedes-vclass.title') : 'Mercedes V-Class Fullscreen'}
                     className="max-h-[80vh] w-auto mx-auto object-cover p-2"
                     onError={(e) => {
                       e.target.onerror = null;
@@ -329,7 +341,9 @@ const MercedesVClass = () => {
                       >
                         <img
                           src={image}
-                          alt={`Mercedes V-Class Thumbnail ${index + 1}`}
+                          alt={language === 'ar'
+                            ? `${t('vehicles.mercedes-vclass.title')} ${index + 1}`
+                            : `Mercedes V-Class Thumbnail ${index + 1}`}
                           className="w-full h-full object-cover"
                           onError={(e) => {
                             e.target.onerror = null;
@@ -347,47 +361,77 @@ const MercedesVClass = () => {
 
         <div className="cta-container">
           <div className="car-info-section">
-            <h3 className="section-title">Premium Services & Group Travel</h3>
+            <h3 className="section-title">
+              {language === 'ar' ? t('vehicles.mercedes-vclass.premium-services') : 'Premium Services & Group Travel'}
+            </h3>
             <div className="specs-grid mb-6">
               <div className="specs-category">
                 <ul className="specs-list">
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> Professional chauffeur service
-                  </li>
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> Complimentary Wi-Fi onboard
-                  </li>
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> Premium refreshments
-                  </li>
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> Daily newspapers and magazines
-                  </li>
+                  {language === 'ar' ? (
+                    // Arabic services list (first half)
+                    t('vehicles.mercedes-vclass.services-list', { returnObjects: true })
+                      .slice(0, 4)
+                      .map((service, index) => (
+                        <li key={index} className="specs-item">
+                          <span className="specs-item-icon">•</span> {service}
+                        </li>
+                      ))
+                  ) : (
+                    // English services list (first half)
+                    <>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> Professional chauffeur service
+                      </li>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> Complimentary Wi-Fi onboard
+                      </li>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> Premium refreshments
+                      </li>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> Daily newspapers and magazines
+                      </li>
+                    </>
+                  )}
                 </ul>
               </div>
               <div className="specs-category">
                 <ul className="specs-list">
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> Premium leather upholstery with ambient lighting
-                  </li>
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> Burmester® surround sound system
-                  </li>
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> Panoramic sliding sunroof
-                  </li>
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> Electric sliding doors for easy access
-                  </li>
+                  {language === 'ar' ? (
+                    // Arabic services list (second half)
+                    t('vehicles.mercedes-vclass.services-list', { returnObjects: true })
+                      .slice(4)
+                      .map((service, index) => (
+                        <li key={index + 4} className="specs-item">
+                          <span className="specs-item-icon">•</span> {service}
+                        </li>
+                      ))
+                  ) : (
+                    // English services list (second half)
+                    <>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> Premium leather upholstery with ambient lighting
+                      </li>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> Burmester® surround sound system
+                      </li>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> Panoramic sliding sunroof
+                      </li>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> Electric sliding doors for easy access
+                      </li>
+                    </>
+                  )}
                 </ul>
               </div>
             </div>
             <p className="section-content">
-              Book your premium Mercedes V-Class chauffeur service today and enjoy spacious luxury for your group or family.
+              {language === 'ar' ? t('vehicles.mercedes-vclass.book-cta') : 'Book your premium Mercedes V-Class chauffeur service today and enjoy spacious luxury for your group or family.'}
             </p>
             <div className="flex justify-center mt-6">
               <Link to="/contact" className="cta-button">
-                Book Now
+                {language === 'ar' ? t('common.bookNow') : 'Book Now'}
               </Link>
             </div>
           </div>

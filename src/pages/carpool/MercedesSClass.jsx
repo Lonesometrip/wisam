@@ -6,6 +6,8 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 import { fadeIn, textVariant } from '../../utils/motion';
+import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 import CanvasLoader from '../../components/Loader';
 import '../../styles/carpool.css';
@@ -19,8 +21,8 @@ const SClassModel = () => {
 
   // Ensure consistent size during loading
   React.useEffect(() => {
-    // Set a fixed size for the model to prevent size changes during loading
-    scene.scale.set(0.7, 0.7, 0.7);
+    // Set a fixed size for the model to prevent size changes during loading - reduced size
+    scene.scale.set(0.5, 0.5, 0.5);
   }, [scene]);
 
   // Apply optimizations for sharper, clearer rendering
@@ -81,8 +83,8 @@ const SClassModel = () => {
       {/* Optimized model with better camera angle - made consistently smaller */}
       <primitive
         object={scene}
-        scale={0.7} // Further reduced scale for consistent smaller size
-        position={[0, -0.8, 0]} // Maintaining the higher position
+        scale={0.5} // Further reduced scale for consistent smaller size
+        position={[0, -0.5, 0]} // Moved 3cm higher (from -0.8 to -0.5)
         rotation={[0, Math.PI / 3.5, 0]} // Better angle to showcase the luxury sedan
         userData={{ keepSize: true }} // Flag to maintain consistent size
       />
@@ -91,6 +93,8 @@ const SClassModel = () => {
 };
 
 const MercedesSClass = () => {
+  const { t } = useTranslation();
+  const { language } = useLanguage();
   const [isMobile, setIsMobile] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -136,10 +140,14 @@ const MercedesSClass = () => {
       <div className={`${styles.padding} max-w-7xl mx-auto relative z-0`}>
         <motion.div variants={fadeIn('', '', 0.1, 1)} className="carpool-frame">
           <motion.div variants={textVariant()} className="carpool-header">
-            <p className="carpool-subtitle">Premium Vehicle</p>
-            <h2 className="carpool-title">Mercedes S-Class</h2>
+            <p className="carpool-subtitle">
+              {language === 'ar' ? t('common.premiumVehicle') : 'Premium Vehicle'}
+            </p>
+            <h2 className="carpool-title">
+              {language === 'ar' ? t('vehicles.mercedes-sclass.title') : 'Mercedes S-Class'}
+            </h2>
             <p className="carpool-description">
-              The pinnacle of luxury sedans, offering unparalleled comfort and sophisticated design.
+              {language === 'ar' ? t('vehicles.mercedes-sclass.description') : 'The pinnacle of luxury sedans, offering unparalleled comfort and sophisticated design.'}
             </p>
           </motion.div>
 
@@ -189,7 +197,9 @@ const MercedesSClass = () => {
           variants={fadeIn('', '', 0.2, 1)}
           className="car-info-section"
         >
-          <h3 className="section-title">Gallery</h3>
+          <h3 className="section-title">
+            {language === 'ar' ? t('vehicles.mercedes-sclass.gallery') : 'Gallery'}
+          </h3>
           <div className="modern-gallery-container">
             {/* Main large image */}
             <div className="modern-gallery-main" onClick={toggleFullscreen}>
@@ -199,7 +209,7 @@ const MercedesSClass = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
                 src={images[activeImage]}
-                alt="Mercedes S-Class Featured"
+                alt={language === 'ar' ? t('vehicles.mercedes-sclass.title') : 'Mercedes S-Class Featured'}
                 onError={(e) => {
                   e.target.onerror = null;
                   e.target.src = fallbackImage;
@@ -217,7 +227,9 @@ const MercedesSClass = () => {
                 >
                   <img
                     src={image}
-                    alt={`Mercedes S-Class ${index + 1}`}
+                    alt={language === 'ar'
+                      ? `${t('vehicles.mercedes-sclass.title')} ${index + 1}`
+                      : `Mercedes S-Class ${index + 1}`}
                     onError={(e) => {
                       e.target.onerror = null;
                       e.target.src = fallbackImage;
@@ -244,7 +256,7 @@ const MercedesSClass = () => {
                   </button>
                   <img
                     src={images[activeImage]}
-                    alt="Mercedes S-Class Fullscreen"
+                    alt={language === 'ar' ? t('vehicles.mercedes-sclass.title') : 'Mercedes S-Class Fullscreen'}
                     className="max-h-[80vh] w-auto mx-auto object-cover p-2"
                     onError={(e) => {
                       e.target.onerror = null;
@@ -263,7 +275,9 @@ const MercedesSClass = () => {
                       >
                         <img
                           src={image}
-                          alt={`Mercedes S-Class Thumbnail ${index + 1}`}
+                          alt={language === 'ar'
+                            ? `${t('vehicles.mercedes-sclass.title')} ${index + 1}`
+                            : `Mercedes S-Class Thumbnail ${index + 1}`}
                           className="w-full h-full object-cover"
                           onError={(e) => {
                             e.target.onerror = null;
@@ -281,47 +295,77 @@ const MercedesSClass = () => {
 
         <div className="cta-container">
           <div className="car-info-section">
-            <h3 className="section-title">Premium Services & Luxury Experience</h3>
+            <h3 className="section-title">
+              {language === 'ar' ? t('vehicles.mercedes-sclass.premium-services') : 'Premium Services & Luxury Experience'}
+            </h3>
             <div className="specs-grid mb-6">
               <div className="specs-category">
                 <ul className="specs-list">
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> Professional chauffeur service
-                  </li>
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> Complimentary Wi-Fi onboard
-                  </li>
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> Premium refreshments
-                  </li>
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> Daily newspapers and magazines
-                  </li>
+                  {language === 'ar' ? (
+                    // Arabic services list (first half)
+                    t('vehicles.mercedes-sclass.services-list', { returnObjects: true })
+                      .slice(0, 4)
+                      .map((service, index) => (
+                        <li key={index} className="specs-item">
+                          <span className="specs-item-icon">•</span> {service}
+                        </li>
+                      ))
+                  ) : (
+                    // English services list (first half)
+                    <>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> Professional chauffeur service
+                      </li>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> Complimentary Wi-Fi onboard
+                      </li>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> Premium refreshments
+                      </li>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> Daily newspapers and magazines
+                      </li>
+                    </>
+                  )}
                 </ul>
               </div>
               <div className="specs-category">
                 <ul className="specs-list">
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> Advanced driver assistance systems for maximum safety
-                  </li>
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> Premium Burmester® surround sound system
-                  </li>
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> Ambient lighting with 64 colors
-                  </li>
-                  <li className="specs-item">
-                    <span className="specs-item-icon">•</span> Spacious cabin with executive rear seating
-                  </li>
+                  {language === 'ar' ? (
+                    // Arabic services list (second half)
+                    t('vehicles.mercedes-sclass.services-list', { returnObjects: true })
+                      .slice(4)
+                      .map((service, index) => (
+                        <li key={index + 4} className="specs-item">
+                          <span className="specs-item-icon">•</span> {service}
+                        </li>
+                      ))
+                  ) : (
+                    // English services list (second half)
+                    <>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> Advanced driver assistance systems for maximum safety
+                      </li>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> Premium Burmester® surround sound system
+                      </li>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> Ambient lighting with 64 colors
+                      </li>
+                      <li className="specs-item">
+                        <span className="specs-item-icon">•</span> Spacious cabin with executive rear seating
+                      </li>
+                    </>
+                  )}
                 </ul>
               </div>
             </div>
             <p className="section-content">
-              Book your premium Mercedes S-Class chauffeur service today and enjoy the ultimate in comfort and style.
+              {language === 'ar' ? t('vehicles.mercedes-sclass.book-cta') : 'Book your premium Mercedes S-Class chauffeur service today and enjoy the ultimate in comfort and style.'}
             </p>
             <div className="flex justify-center mt-6">
               <Link to="/contact" className="cta-button">
-                Book Now
+                {language === 'ar' ? t('common.bookNow') : 'Book Now'}
               </Link>
             </div>
           </div>

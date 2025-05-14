@@ -14,6 +14,7 @@ import '../styles/carpool-custom.css';
 
 const ServiceCard = ({ index, title, icon, id }) => {
   const { t } = useTranslation();
+  const { language } = useLanguage();
 
   return (
     <motion.div
@@ -37,7 +38,7 @@ const ServiceCard = ({ index, title, icon, id }) => {
           <div className="card-content">
             <h3 className="card-title">{t(`carpool.${id}`)}</h3>
             <p className="card-description text-center">
-              Click to view details
+              {language === 'ar' ? t('carpool.viewDetails') : 'Click to view details'}
             </p>
           </div>
         </Link>
@@ -48,19 +49,26 @@ const ServiceCard = ({ index, title, icon, id }) => {
 
 const CarpoolContent = () => {
   const { t } = useTranslation();
+  const { language } = useLanguage();
 
   return (
     <div className="section-container">
       <div className="section-header">
         <motion.div variants={textVariant()}>
-          <p className="section-subtitle">PREMIUM VEHICLES</p>
-          <h2 className="section-title">Carpool</h2>
+          <p className="section-subtitle">
+            {language === 'ar' ? 'أسطول سيارات فاخر' : 'LUXUS FAHRZEUGFLOTTE'}
+          </p>
+          <h2 className="section-title">
+            {language === 'ar' ? 'سيارات فاخرة' : 'Premium Fahrzeuge'}
+          </h2>
           <div className="section-title-underline"></div>
         </motion.div>
 
         <p className="section-description">
-          Our premium carpool service offers comfortable and reliable transportation options for all occasions.
-          Choose from our luxury fleet of high-end vehicles driven by professional chauffeurs.
+          {language === 'ar'
+            ? "خدمة سائق فاخرة مع سيارات مرسيدس الفئة S وبي إم دبليو الفئة 7 ومرسيدس الفئة V. نقدم خدمات نقل رجال الأعمال، وخدمة المطار، وخدمة كبار الشخصيات في جميع أنحاء أوروبا. سائق يتحدث العربية متاح على مدار الساعة لتلبية احتياجات النقل الحصرية الخاصة بك."
+            : "Unser exklusiver Limousinenservice bietet Ihnen erstklassige Transportmöglichkeiten mit Mercedes S-Klasse, BMW 7er Serie und Mercedes V-Klasse für alle Anlässe. Wählen Sie aus unserer Luxusflotte von hochwertigen Fahrzeugen mit professionellen Chauffeuren für Business Transfers, Flughafentransfers und VIP-Service."
+          }
         </p>
       </div>
 

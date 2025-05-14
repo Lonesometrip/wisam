@@ -15,21 +15,21 @@ const carpoolItems = [
   {
     key: "s_class",
     title: "Mercedes S-Class",
-    icon: "https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80", // S-Class image
+    icon: "/src/assets/S_Class/s1.jpg", // S-Class image from assets
     iconBg: "linear-gradient(135deg, #000000, #111111)",
     link: "/carpool/mercedes-sclass"
   },
   {
     key: "v_class",
     title: "Mercedes V-Class",
-    icon: "https://images.unsplash.com/photo-1551446591-142875a901a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80", // V-Class image
+    icon: "/src/assets/V_Class/v1.jpg", // V-Class image from assets
     iconBg: "linear-gradient(135deg, #000000, #111111)",
     link: "/carpool/mercedes-vclass"
   },
   {
     key: "bmw7",
     title: "BMW 7",
-    icon: "https://images.unsplash.com/photo-1523983388277-336a66bf9bcd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80", // BMW 7 image
+    icon: "/src/assets/BMW7/bmw1.jpg", // BMW 7 image from assets
     iconBg: "linear-gradient(135deg, #000000, #111111)",
     link: "/carpool/bmw-7"
   }
@@ -38,7 +38,7 @@ const carpoolItems = [
 // Carpool content component
 const CarpoolContent = () => {
   const { t } = useTranslation();
-  const { dir } = useLanguage();
+  const { dir, language } = useLanguage();
 
   return (
     <div className="carpool-container">
@@ -47,8 +47,12 @@ const CarpoolContent = () => {
 
       <div className="carpool-content">
         <motion.div variants={textVariant()} className="carpool-header">
-          <p className={`${styles.sectionSubText} text-[#D4AF37]`}>PREMIUM VEHICLES</p>
-          <h2 className={`${styles.sectionHeadText}`}>Carpool</h2>
+          <p className={`${styles.sectionSubText} text-[#D4AF37]`}>
+            {language === 'ar' ? t('carpool.subtitle') : 'PREMIUM VEHICLES'}
+          </p>
+          <h2 className={`${styles.sectionHeadText}`}>
+            {language === 'ar' ? t('carpool.title') : 'Carpool'}
+          </h2>
           <div className="title-underline"></div>
         </motion.div>
 
@@ -56,7 +60,7 @@ const CarpoolContent = () => {
           variants={fadeIn('', '', 0.1, 1)}
           className="carpool-description"
         >
-          Our premium carpool service offers comfortable and reliable transportation options for groups of all sizes. Whether you're traveling for business or leisure, our fleet of luxury vehicles ensures a smooth and enjoyable journey. We prioritize safety, punctuality, and customer satisfaction with every ride.
+          {language === 'ar' ? t('carpool.description') : 'Our premium carpool service offers comfortable and reliable transportation options for groups of all sizes. Whether you\'re traveling for business or leisure, our fleet of luxury vehicles ensures a smooth and enjoyable journey. We prioritize safety, punctuality, and customer satisfaction with every ride.'}
         </motion.p>
 
         <div className="vehicle-cards-container">
@@ -69,10 +73,18 @@ const CarpoolContent = () => {
               transition={{ delay: index * 0.2, duration: 0.5 }}
             >
               <div className="vehicle-image-container">
-                <img src={vehicle.icon} alt={vehicle.title} className="vehicle-image" />
+                <img
+                  src={vehicle.icon}
+                  alt={language === 'ar' ? t(`carpool.${vehicle.key}`) : vehicle.title}
+                  className="vehicle-image"
+                />
               </div>
-              <h3 className="vehicle-title">{vehicle.title}</h3>
-              <a href={vehicle.link} className="vehicle-link">Click to view details</a>
+              <h3 className="vehicle-title">
+                {language === 'ar' ? t(`carpool.${vehicle.key}`) : vehicle.title}
+              </h3>
+              <a href={vehicle.link} className="vehicle-link">
+                {language === 'ar' ? t('carpool.viewDetails') : 'Click to view details'}
+              </a>
             </motion.div>
           ))}
         </div>
@@ -83,17 +95,22 @@ const CarpoolContent = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
         >
-          <h2 className="info-section-title">Why Choose Our Carpool Service?</h2>
+          <h2 className="info-section-title">
+            {language === 'ar' ? t('carpool.why-choose-title') : 'Why Choose Our Carpool Service?'}
+          </h2>
 
           <div className="info-features">
             <div className="info-feature">
               <div className="feature-icon">
                 <span className="icon-circle">✓</span>
               </div>
-              <h3 className="feature-title">Professional Chauffeurs</h3>
+              <h3 className="feature-title">
+                {language === 'ar' ? t('carpool.professional-chauffeurs') : 'Professional Chauffeurs'}
+              </h3>
               <p className="feature-description">
-                Our experienced and professionally trained chauffeurs ensure your safety and comfort throughout your journey.
-                All drivers undergo rigorous background checks and training in customer service excellence.
+                {language === 'ar'
+                  ? t('carpool.professional-chauffeurs-desc')
+                  : 'Our experienced and professionally trained chauffeurs ensure your safety and comfort throughout your journey. All drivers undergo rigorous background checks and training in customer service excellence.'}
               </p>
             </div>
 
@@ -101,10 +118,13 @@ const CarpoolContent = () => {
               <div className="feature-icon">
                 <span className="icon-circle">✓</span>
               </div>
-              <h3 className="feature-title">Luxury Fleet</h3>
+              <h3 className="feature-title">
+                {language === 'ar' ? t('carpool.luxury-fleet') : 'Luxury Fleet'}
+              </h3>
               <p className="feature-description">
-                Travel in style with our meticulously maintained luxury vehicles. Each car in our fleet offers premium amenities
-                and is regularly serviced to ensure reliability and comfort.
+                {language === 'ar'
+                  ? t('carpool.luxury-fleet-desc')
+                  : 'Travel in style with our meticulously maintained luxury vehicles. Each car in our fleet offers premium amenities and is regularly serviced to ensure reliability and comfort.'}
               </p>
             </div>
 
@@ -112,10 +132,13 @@ const CarpoolContent = () => {
               <div className="feature-icon">
                 <span className="icon-circle">✓</span>
               </div>
-              <h3 className="feature-title">Customized Service</h3>
+              <h3 className="feature-title">
+                {language === 'ar' ? t('carpool.customized-service') : 'Customized Service'}
+              </h3>
               <p className="feature-description">
-                We tailor our service to meet your specific needs, whether it's airport transfers, corporate events,
-                or special occasions. Our team works with you to create the perfect transportation solution.
+                {language === 'ar'
+                  ? t('carpool.customized-service-desc')
+                  : 'We tailor our service to meet your specific needs, whether it\'s airport transfers, corporate events, or special occasions. Our team works with you to create the perfect transportation solution.'}
               </p>
             </div>
           </div>
@@ -127,38 +150,52 @@ const CarpoolContent = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7, duration: 0.8 }}
         >
-          <h2 className="service-section-title">Our Services</h2>
+          <h2 className="service-section-title">
+            {language === 'ar' ? t('carpool.our-services-title') : 'Our Services'}
+          </h2>
 
           <div className="service-types">
             <div className="service-type">
-              <h3 className="service-type-title">Airport Transfers</h3>
+              <h3 className="service-type-title">
+                {language === 'ar' ? t('carpool.airport-transfers') : 'Airport Transfers'}
+              </h3>
               <p className="service-type-description">
-                Start and end your journey in comfort with our reliable airport transfer service.
-                We monitor flight times to ensure punctual pickups and drop-offs, even if your flight is delayed.
+                {language === 'ar'
+                  ? t('carpool.airport-transfers-desc')
+                  : 'Start and end your journey in comfort with our reliable airport transfer service. We monitor flight times to ensure punctual pickups and drop-offs, even if your flight is delayed.'}
               </p>
             </div>
 
             <div className="service-type">
-              <h3 className="service-type-title">Corporate Transportation</h3>
+              <h3 className="service-type-title">
+                {language === 'ar' ? t('carpool.corporate-transportation') : 'Corporate Transportation'}
+              </h3>
               <p className="service-type-description">
-                Make a lasting impression with our executive transportation services.
-                Perfect for business meetings, conferences, and corporate events.
+                {language === 'ar'
+                  ? t('carpool.corporate-transportation-desc')
+                  : 'Make a lasting impression with our executive transportation services. Perfect for business meetings, conferences, and corporate events.'}
               </p>
             </div>
 
             <div className="service-type">
-              <h3 className="service-type-title">Special Events</h3>
+              <h3 className="service-type-title">
+                {language === 'ar' ? t('carpool.special-events') : 'Special Events'}
+              </h3>
               <p className="service-type-description">
-                Celebrate in style with our luxury transportation for weddings, anniversaries,
-                and other special occasions. We add a touch of elegance to your important day.
+                {language === 'ar'
+                  ? t('carpool.special-events-desc')
+                  : 'Celebrate in style with our luxury transportation for weddings, anniversaries, and other special occasions. We add a touch of elegance to your important day.'}
               </p>
             </div>
 
             <div className="service-type">
-              <h3 className="service-type-title">City Tours</h3>
+              <h3 className="service-type-title">
+                {language === 'ar' ? t('carpool.city-tours') : 'City Tours'}
+              </h3>
               <p className="service-type-description">
-                Explore the city with our customized tour packages. Our knowledgeable chauffeurs
-                double as guides to enhance your sightseeing experience.
+                {language === 'ar'
+                  ? t('carpool.city-tours-desc')
+                  : 'Explore the city with our customized tour packages. Our knowledgeable chauffeurs double as guides to enhance your sightseeing experience.'}
               </p>
             </div>
           </div>
@@ -170,11 +207,17 @@ const CarpoolContent = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9, duration: 0.8 }}
         >
-          <h2 className="booking-title">Ready to Book?</h2>
+          <h2 className="booking-title">
+            {language === 'ar' ? t('carpool.ready-to-book') : 'Ready to Book?'}
+          </h2>
           <p className="booking-description">
-            Contact us today to reserve your luxury transportation and experience the difference of our premium carpool service.
+            {language === 'ar'
+              ? t('carpool.booking-description')
+              : 'Contact us today to reserve your luxury transportation and experience the difference of our premium carpool service.'}
           </p>
-          <button className="booking-button">Book Now</button>
+          <button className="booking-button">
+            {language === 'ar' ? t('carpool.book-now') : 'Book Now'}
+          </button>
         </motion.div>
       </div>
     </div>

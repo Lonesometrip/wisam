@@ -6,52 +6,52 @@
 // This would ideally be generated from your website content
 export const initialKnowledgeBase = [
   {
-    title: 'About Us',
-    content: 'We are a premium transportation and chauffeur service offering luxury vehicles including Mercedes S-Class, BMW 7 Series, and Mercedes V-Class. Our services include chauffeur service, airport transfers, and VIP services.'
+    title: 'Über Uns',
+    content: 'Wir sind ein Premium Chauffeur Service und Luxus Limousinenservice mit exklusiven Fahrzeugen wie Mercedes S-Klasse, BMW 7er Serie und Mercedes V-Klasse. Unser Business Chauffeur Service umfasst Executive Transfer Service, Flughafentransfer und VIP Chauffeur Service in ganz Deutschland.'
   },
   {
-    title: 'Carpool Services',
-    content: 'We offer a range of luxury vehicles including Mercedes S-Class, BMW 7 Series, and Mercedes V-Class. Each vehicle comes with a professional chauffeur and is maintained to the highest standards.'
+    title: 'Fahrzeugflotte',
+    content: 'Unser exklusiver Limousinenservice bietet eine Auswahl an Luxusfahrzeugen, darunter Mercedes S-Klasse, BMW 7er Serie und Mercedes V-Klasse. Jedes Fahrzeug wird mit einem professionellen Chauffeur bereitgestellt und nach höchsten Standards gewartet und gepflegt.'
   },
   {
-    title: 'Mercedes S-Class',
-    content: 'The Mercedes S-Class is our premium sedan offering. It features luxurious leather seats, climate control, and a smooth, comfortable ride. Ideal for business travel and special occasions.'
+    title: 'Mercedes S-Klasse',
+    content: 'Die Mercedes S-Klasse ist unser Premium-Limousinenservice für höchste Ansprüche. Sie bietet luxuriöse Ledersitze, Klimaanlage und eine sanfte, komfortable Fahrt. Ideal für Business Transfers, Executive Chauffeur Service und besondere Anlässe. Die perfekte Wahl für anspruchsvolle Geschäftsreisende.'
   },
   {
-    title: 'BMW 7 Series',
-    content: 'The BMW 7 Series combines luxury with sporty performance. It features spacious interiors, advanced technology, and a powerful engine. Perfect for executives and VIP clients.'
+    title: 'BMW 7er Serie',
+    content: 'Die BMW 7er Serie verbindet Luxus mit sportlicher Leistung in unserem exklusiven Chauffeurservice. Sie bietet geräumige Innenräume, fortschrittliche Technologie und einen leistungsstarken Motor. Perfekt für Führungskräfte, VIP-Kunden und Business Chauffeur Service mit höchstem Komfort.'
   },
   {
-    title: 'Mercedes V-Class',
-    content: 'The Mercedes V-Class is our premium van offering. It can accommodate up to 7 passengers with luggage, making it ideal for group travel, airport transfers, and family outings.'
+    title: 'Mercedes V-Klasse',
+    content: 'Die Mercedes V-Klasse ist unser Premium-Van für den Luxus Limousinenservice. Sie bietet Platz für bis zu 7 Passagiere mit Gepäck und ist ideal für Gruppenreisen, Flughafentransfers und Familienausflüge. Die perfekte Wahl für komfortables Reisen in größeren Gruppen mit unserem professionellen Chauffeurservice.'
   },
   {
-    title: 'Chauffeur Service',
-    content: 'Our professional chauffeurs are trained to provide exceptional service. They are punctual, discreet, and knowledgeable about the local area. All chauffeurs speak multiple languages and are dressed in formal attire.'
+    title: 'Business Chauffeur Service',
+    content: 'Unser professioneller Business Chauffeur Service bietet erstklassigen Executive Transfer Service für Geschäftsreisende. Unsere Chauffeure sind geschult, um außergewöhnlichen Service zu bieten. Sie sind pünktlich, diskret und kennen sich in der Region bestens aus. Alle Chauffeure sprechen mehrere Sprachen und tragen formelle Kleidung für einen professionellen Auftritt.'
   },
   {
-    title: 'Airport Transfer',
-    content: 'We offer reliable airport transfer services to and from all major airports. Our chauffeurs track flight arrivals in real-time to ensure they are waiting for you when you land. We include 60 minutes of waiting time for international flights.'
+    title: 'Flughafentransfer',
+    content: 'Wir bieten zuverlässigen Flughafentransfer zu und von allen wichtigen Flughäfen. Unser Luxustransfer vom Flughafen umfasst Echtzeitverfolgung der Flugankünfte, damit unsere Chauffeure Sie bei der Landung erwarten. Wir gewähren 60 Minuten kostenlose Wartezeit für internationale Flüge und bieten einen komfortablen Meet-and-Greet-Service.'
   },
   {
-    title: 'VIP Service',
-    content: 'Our VIP service offers the highest level of luxury and discretion. We can arrange for security personnel, coordinate with event organizers, and provide customized services to meet your specific requirements.'
+    title: 'VIP Chauffeur Service',
+    content: 'Unser VIP Chauffeur Service bietet höchsten Luxus und Diskretion für anspruchsvolle Kunden. Wir können Sicherheitspersonal arrangieren, mit Veranstaltern koordinieren und maßgeschneiderte Dienstleistungen anbieten, um Ihre spezifischen Anforderungen zu erfüllen. Unser 24h Premium Fahrservice steht Ihnen rund um die Uhr zur Verfügung.'
   },
   {
-    title: 'Tourism Services',
-    content: 'We offer guided tours to popular destinations, shopping tours, theme parks, and farm visits. Our chauffeurs are knowledgeable about local attractions and can provide recommendations based on your interests.'
+    title: 'Tourismus Dienstleistungen',
+    content: 'Wir bieten geführte Touren zu beliebten Reisezielen, Shopping-Touren zu Outlet Centern, Transfers zu Freizeitparks und Bauernhofbesuche mit unserem Luxus Limousinenservice. Unsere Chauffeure kennen sich mit lokalen Sehenswürdigkeiten aus und können Empfehlungen basierend auf Ihren Interessen geben. Erleben Sie Stadtrundfahrten in München, Hamburg, Berlin und Frankfurt mit unserem exklusiven Chauffeurservice.'
   },
   {
-    title: 'Contact Information',
-    content: 'You can reach us by phone, email, or through the contact form on our website. We are available 24/7 to assist with bookings and inquiries.'
+    title: 'Kontaktinformationen',
+    content: 'Sie können uns telefonisch, per E-Mail oder über das Kontaktformular auf unserer Website erreichen. Unser Premium Chauffeur Service steht Ihnen rund um die Uhr zur Verfügung, um Ihnen bei Buchungen und Anfragen zu helfen. Wir bieten 24/7 Verfügbarkeit für alle Ihre Transportbedürfnisse.'
   },
   {
-    title: 'Booking Process',
-    content: 'To book our services, you can use the contact form on our website, call us directly, or send an email. We require the date, time, pickup location, destination, number of passengers, and any special requirements.'
+    title: 'Buchungsprozess',
+    content: 'Um unseren Luxus Limousinenservice zu buchen, können Sie das Kontaktformular auf unserer Website verwenden, uns direkt anrufen oder eine E-Mail senden. Wir benötigen Datum, Uhrzeit, Abholort, Ziel, Anzahl der Passagiere und eventuelle besondere Anforderungen für Ihren Business Chauffeur Service oder VIP Transfer.'
   },
   {
-    title: 'Pricing',
-    content: 'Our pricing is based on the vehicle type, duration, and distance of the journey. We offer hourly rates, half-day rates, and full-day rates. Please contact us for a personalized quote.'
+    title: 'Preisgestaltung',
+    content: 'Unsere Preise für den Premium Chauffeur Service basieren auf dem Fahrzeugtyp, der Dauer und der Entfernung der Reise. Wir bieten Stundensätze, Halbtagessätze und Ganztagessätze für unseren exklusiven Limousinenservice. Bitte kontaktieren Sie uns für ein personalisiertes Angebot für Ihren individuellen Chauffeurservice.'
   }
 ];
 
@@ -63,14 +63,14 @@ export const initialKnowledgeBase = [
  */
 export const searchKnowledgeBase = (query, knowledgeBase = initialKnowledgeBase) => {
   const normalizedQuery = query.toLowerCase();
-  
+
   // Simple search implementation - in a real application, you might want to use
   // a more sophisticated search algorithm or a vector database
   return knowledgeBase.filter(entry => {
     const normalizedTitle = entry.title.toLowerCase();
     const normalizedContent = entry.content.toLowerCase();
-    
-    return normalizedTitle.includes(normalizedQuery) || 
+
+    return normalizedTitle.includes(normalizedQuery) ||
            normalizedContent.includes(normalizedQuery);
   });
 };
@@ -98,16 +98,16 @@ export const extractContentFromHTML = (html, title) => {
   // In a real application, you would use a proper HTML parser
   const tempDiv = document.createElement('div');
   tempDiv.innerHTML = html;
-  
+
   // Remove scripts, styles, and other non-content elements
   const scripts = tempDiv.querySelectorAll('script, style, nav, footer');
   scripts.forEach(script => script.remove());
-  
+
   // Get the text content
   const content = tempDiv.textContent.trim()
     .replace(/\s+/g, ' ') // Replace multiple spaces with a single space
     .substring(0, 1000); // Limit the length
-  
+
   return {
     title,
     content

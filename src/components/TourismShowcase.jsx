@@ -57,6 +57,9 @@ const tourismItems = [
 
 // Tourism Card Component
 const TourismCard = ({ item }) => {
+  const { t } = useTranslation();
+  const { language } = useLanguage();
+
   return (
     <Link to={item.link} className="card-link">
       <motion.div
@@ -67,11 +70,13 @@ const TourismCard = ({ item }) => {
         whileHover={{ scale: 1.02 }}
       >
         <div className="card-image">
-          <img src={item.image} alt={item.title} />
+          <img src={item.image} alt={language === 'ar' ? t(`tourism.${item.key}`) : item.title} />
         </div>
         <div className="card-content">
-          <h3 className="card-title">{item.title}</h3>
-          <p className="card-description">{item.description}</p>
+          <h3 className="card-title">{language === 'ar' ? t(`tourism.${item.key}`) : item.title}</h3>
+          <p className="card-description">
+            {language === 'ar' ? t(`tourism.${item.key}-desc`) : item.description}
+          </p>
           <div className="card-tags">
             {item.hashtags.map((tag, index) => (
               <span key={index} className="card-tag">{tag}</span>
@@ -86,21 +91,26 @@ const TourismCard = ({ item }) => {
 // Tourism content component
 const TourismContent = () => {
   const { t } = useTranslation();
-  const { dir } = useLanguage();
+  const { dir, language } = useLanguage();
 
   return (
     <>
       <div className="section-header">
         <motion.div variants={textVariant()}>
-          <p className="section-subtitle">LUXURY TRAVEL EXPERIENCES</p>
-          <h2 className="section-title">Tourism Packages</h2>
+          <p className="section-subtitle">
+            {language === 'ar' ? 'تجارب سفر فاخرة' : 'LUXURY TRAVEL EXPERIENCES'}
+          </p>
+          <h2 className="section-title">
+            {language === 'ar' ? 'باقات السياحة' : 'Tourism Packages'}
+          </h2>
           <div className="section-title-underline"></div>
         </motion.div>
 
         <p className="section-description">
-          Discover our exclusive tourism packages designed to provide unforgettable experiences.
-          Each package includes luxury transportation in our premium vehicles, expert guides, and
-          carefully selected accommodations for your comfort.
+          {language === 'ar'
+            ? "اكتشف باقات السياحة الحصرية المصممة لتوفير تجارب لا تُنسى. تتضمن كل حزمة نقلًا فاخرًا في سياراتنا الفاخرة ومرشدين خبراء يتحدثون العربية وأماكن إقامة مختارة بعناية لراحتك."
+            : "Discover our exclusive tourism packages designed to provide unforgettable experiences. Each package includes luxury transportation in our premium vehicles, expert guides, and carefully selected accommodations for your comfort."
+          }
         </p>
       </div>
 

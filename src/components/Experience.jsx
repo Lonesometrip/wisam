@@ -24,15 +24,19 @@ const ServicesContent = () => {
       <div className="section-header">
         <motion.div variants={textVariant()}>
           <p className="section-subtitle">
-            {t('services.subtitle')}
+            {language === 'ar' ? 'حلول نقل حصرية' : 'EXKLUSIVE TRANSPORTLÖSUNGEN'}
           </p>
-          <h2 className="section-title">{t('services.title')}</h2>
+          <h2 className="section-title">
+            {language === 'ar' ? 'خدمة سائق فاخر' : 'Premium Chauffeur Service'}
+          </h2>
           <div className="section-title-underline"></div>
         </motion.div>
 
         <p className="section-description">
-          We offer a range of premium chauffeur services tailored to meet your transportation needs.
-          Our professional drivers and luxury vehicles ensure a comfortable and stylish journey.
+          {language === 'ar'
+            ? "نقدم خدمة سائق من الدرجة الأولى وحلول نقل حصرية للعملاء المميزين. تضمن خدمة سائق الأعمال وخدمة النقل التنفيذي وخدمة سائق كبار الشخصيات لدينا أعلى مستويات الراحة والخصوصية. مع سائقينا المحترفين وسياراتنا الفاخرة، ستستمتع برحلة أنيقة ومريحة - سواء لمواعيد العمل أو النقل من المطار أو المناسبات الخاصة."
+            : "Wir bieten erstklassigen Chauffeurservice und exklusive Transportlösungen für anspruchsvolle Kunden. Unser Business Chauffeur Service, Executive Transfer Service und VIP Chauffeur Service garantieren höchsten Komfort und Diskretion. Mit unseren professionellen Fahrern und Luxusfahrzeugen erleben Sie eine stilvolle und komfortable Reise - ob für Geschäftstermine, Flughafentransfers oder besondere Anlässe."
+          }
         </p>
       </div>
 

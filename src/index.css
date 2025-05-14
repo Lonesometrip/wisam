@@ -3,6 +3,8 @@
 @import './styles/rtl-timeline.css';
 @import './styles/section-styles.css';
 @import './styles/black-gold-background.css';
+@import './styles/carpool-page.css';
+@import './styles/tourism-page.css';
 
 @tailwind base;
 @tailwind components;

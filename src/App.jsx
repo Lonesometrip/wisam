@@ -18,6 +18,7 @@ document.head.appendChild(globalStyle);
 import MercedesSClass from './pages/carpool/MercedesSClass';
 import BMW7 from './pages/carpool/BMW7';
 import MercedesVClass from './pages/carpool/MercedesVClass';
+import CarPoolPage from './pages/CarPoolPage';
 
 // Services pages
 import ChauffeurService from './pages/services/ChauffeurService';
@@ -29,15 +30,14 @@ import PopularDestinations from './pages/tourism/PopularDestinations';
 import ShoppingTours from './pages/tourism/ShoppingTours';
 import Freizeitparks from './pages/tourism/Freizeitparks';
 import Bauernhofe from './pages/tourism/Bauernhofe';
+import TourismPage from './pages/TourismPage';
+
+// Other pages
+import ContactPage from './pages/ContactPage';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 // Main section components
-import { CarpoolPage, ServicesPage, TourismPage } from './components';
-
-// Contact page
-import ContactPage from './pages/ContactPage';
-
-// Legal pages
-import PrivacyPolicy from './pages/PrivacyPolicy';
+import { ServicesPage } from './components';
 
 const App = () => {
   return (
@@ -53,7 +53,7 @@ const App = () => {
 
           {/* Carpool routes */}
           <Route path="carpool">
-            <Route index element={<CarpoolPage />} />
+            <Route index element={<CarPoolPage />} />
             <Route path="mercedes-sclass" element={<MercedesSClass />} />
             <Route path="bmw-7" element={<BMW7 />} />
             <Route path="mercedes-vclass" element={<MercedesVClass />} />

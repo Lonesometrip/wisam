@@ -90,39 +90,42 @@ export const technologies = [
 
 export const experiences = [
   {
-    title: "Executive Chauffeur Service",
-    company_name: "Premium Chauffeur | Business Travel",
+    title: "Business Chauffeur Service",
+    company_name: "Premium Chauffeur | Executive Transfer",
     icon: eduskill,
     iconBg: "#000000",
-    date: "Available 24/7",
+    date: "24/7 verfügbar",
     points: [
-      "Professional chauffeur service for executives and business professionals with luxury Mercedes S-Class and BMW 7 Series vehicles.",
-      "Discreet, reliable transportation with experienced drivers who understand the needs of corporate clients.",
-      "Complimentary amenities including Wi-Fi, refreshments, and daily newspapers for productive travel time.",
+      "Exklusiver Chauffeurservice für Geschäftsreisende mit luxuriösen Mercedes S-Klasse und BMW 7er Fahrzeugen.",
+      "Diskreter, zuverlässiger Limousinenservice mit erfahrenen Fahrern, die die Bedürfnisse von Geschäftskunden verstehen.",
+      "Kostenlose Annehmlichkeiten wie WLAN, Erfrischungen und Tageszeitungen für eine produktive Reisezeit.",
+      "Maßgeschneiderte Business Transfer Lösungen für Meetings, Konferenzen und Geschäftsreisen in ganz Deutschland.",
     ],
   },
   {
     title: "Airport Transfer Service",
-    company_name: "Premium Chauffeur | Airport Transfers",
+    company_name: "Premium Chauffeur | Flughafentransfer",
     icon: mathwork,
     iconBg: "#000000",
-    date: "All Major Airports",
+    date: "Alle wichtigen Flughäfen",
     points: [
-      "Seamless airport transfers with flight monitoring and adjusted pickup times for early arrivals or delays.",
-      "Meet and greet service with luggage assistance and priority pickup at all major European airports.",
-      "Comfortable, stress-free transportation in luxury vehicles after long flights with 60 minutes of complimentary waiting time.",
+      "Nahtloser Flughafentransfer zu und von allen wichtigen Flughäfen mit Flugverfolgung und angepassten Abholzeiten.",
+      "Meet-and-Greet-Service mit Namensschild und Unterstützung beim Gepäck für einen stressfreien Empfang.",
+      "Komfortable, entspannte Reise nach langen Flügen in geräumigen Luxusfahrzeugen mit erfahrenen Chauffeuren.",
+      "Luxustransfer vom Flughafen zu Ihrem Hotel, Geschäftstermin oder nach Hause - 24 Stunden täglich verfügbar.",
     ],
   },
   {
-    title: "Group Transportation",
-    company_name: "Premium Chauffeur | Group Travel",
+    title: "VIP Chauffeur Service",
+    company_name: "Premium Chauffeur | VIP Transport",
     icon: edunet,
     iconBg: "#000000",
-    date: "Up to 7 Passengers",
+    date: "Höchste Diskretion",
     points: [
-      "Spacious Mercedes V-Class vehicles for comfortable group transportation with ample luggage space.",
-      "Perfect for family vacations, corporate teams, or small group tours with personalized service.",
-      "Wheelchair accessible options available with professional assistance for passengers with mobility needs.",
+      "Exklusiver VIP Chauffeur Service mit Mercedes S-Klasse und BMW 7er für höchste Ansprüche und maximale Diskretion.",
+      "Maßgeschneiderte Transportlösungen für Prominente, Führungskräfte und anspruchsvolle Kunden mit persönlichem Service.",
+      "Erfahrene, mehrsprachige Chauffeure mit umfassender Ortskenntnis und höchsten Sicherheitsstandards.",
+      "24h Premium Fahrservice für besondere Anlässe, Events und Veranstaltungen mit flexibler Routenplanung.",
     ],
   },
 ];
@@ -131,12 +134,12 @@ export const projects = [
   {
     name: "Beliebte Zielorte",
     description:
-      "Discover Germany's most popular tourist destinations with our luxury transportation services",
+      "Entdecken Sie Deutschlands beliebteste Touristenziele mit unserem exklusiven Chauffeurservice. Wir bieten maßgeschneiderte Stadttouren in München, Hamburg, Berlin und Frankfurt mit professionellen Fahrern und luxuriösen Fahrzeugen.",
     tags: [
-      { name: "Sightseeing", color: "blue-text-gradient" },
-      { name: "Cultural Tours", color: "green-text-gradient" },
-      { name: "Historical Sites", color: "pink-text-gradient" },
-      { name: "City Tours", color: "yellow-text-gradient" },
+      { name: "Stadtrundfahrten", color: "blue-text-gradient" },
+      { name: "Kulturtouren", color: "green-text-gradient" },
+      { name: "Historische Stätten", color: "pink-text-gradient" },
+      { name: "Sightseeing mit Chauffeur", color: "yellow-text-gradient" },
     ],
     image: weatherpedia,
     source_code_link: "",
@@ -144,11 +147,12 @@ export const projects = [
   {
     name: "Shopping Tours",
     description:
-      "Exclusive shopping experiences at Germany's finest retail destinations with VIP transportation and personal shopping assistance.",
+      "Exklusive Shopping-Erlebnisse mit unserem Luxus Limousinenservice zu den besten Einkaufszielen Deutschlands. Wir bieten VIP-Transport zu Outlet Centern wie Metzingen, Ingolstadt Village und Designer Outlets mit persönlicher Einkaufsberatung.",
     tags: [
-      { name: "Luxury Shopping", color: "blue-text-gradient" },
-      { name: "Outlet Tours", color: "green-text-gradient" },
-      { name: "VIP Experience", color: "pink-text-gradient" },
+      { name: "Luxus Shopping", color: "blue-text-gradient" },
+      { name: "Outlet Center Touren", color: "green-text-gradient" },
+      { name: "VIP Einkaufserlebnis", color: "pink-text-gradient" },
+      { name: "Shopping mit Chauffeur", color: "yellow-text-gradient" },
     ],
     image: termpw,
     source_code_link: "",
@@ -156,11 +160,12 @@ export const projects = [
   {
     name: "Freizeitparks",
     description:
-      "Visit Germany's best theme parks and amusement attractions with comfortable luxury transportation for families and groups.",
+      "Besuchen Sie Deutschlands beste Freizeitparks mit unserem komfortablen Chauffeurservice. Wir bieten Transfers zu Europa-Park, Phantasialand, Heide Park und Legoland mit luxuriösen Fahrzeugen für Familien und Gruppen.",
     tags: [
-      { name: "Family Fun", color: "blue-text-gradient" },
-      { name: "Theme Parks", color: "green-text-gradient" },
-      { name: "Group Tours", color: "pink-text-gradient" },
+      { name: "Familienausflüge", color: "blue-text-gradient" },
+      { name: "Freizeitpark Transfer", color: "green-text-gradient" },
+      { name: "Gruppenreisen", color: "pink-text-gradient" },
+      { name: "Themenpark Touren", color: "yellow-text-gradient" },
     ],
     image: mhft,
     source_code_link: "",
@@ -168,9 +173,12 @@ export const projects = [
   {
     name: "Bauernhöfe",
     description:
-      "Experience authentic German farm life and rural traditions with our guided farm tours and countryside excursions",
+      "Erleben Sie authentisches deutsches Landleben und ländliche Traditionen mit unserem Premium Chauffeurservice. Wir bieten geführte Hoftouren und Landausflüge zu traditionellen Bauernhöfen mit komfortablem Transport.",
     tags: [
-      { name: "Rural Tourism", color: "blue-text-gradient" },
+      { name: "Landtourismus", color: "blue-text-gradient" },
+      { name: "Bauernhofbesuche", color: "green-text-gradient" },
+      { name: "Ländliche Ausflüge", color: "pink-text-gradient" },
+      { name: "Traditionelle Höfe", color: "yellow-text-gradient" },
     ],
     image: payloadmaster,
     source_code_link: "",
