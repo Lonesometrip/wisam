@@ -22,7 +22,7 @@ const SocialBubble = () => {
   const phoneLink = "tel:+4917631454340";
 
   // Instagram link
-  const instagramLink = "https://instagram.com/premium_chauffeur";
+  const instagramLink = "https://instagram.com/";
 
   return (
     <div className="social-bubble-container">
