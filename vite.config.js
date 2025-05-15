@@ -22,6 +22,13 @@ export default defineConfig(({ command }) => {
         input: {
           main: './index.html',
         },
+        output: {
+          // Ensure proper MIME types for JavaScript modules
+          format: 'es',
+          entryFileNames: 'assets/[name]-[hash].js',
+          chunkFileNames: 'assets/[name]-[hash].js',
+          assetFileNames: 'assets/[name]-[hash].[ext]',
+        },
       },
     },
   };
