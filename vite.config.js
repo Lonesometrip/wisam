@@ -33,8 +33,8 @@ export default defineConfig(({ command }) => {
     },
   };
 
-  // Base path for GitHub Pages
-  config.base = '/wisam/';
+  // Base path - use root path for custom domain
+  config.base = '/';
 
   return config;
 });
