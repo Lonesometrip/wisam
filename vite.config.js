@@ -16,25 +16,16 @@ export default defineConfig(({ command }) => {
       strictPort: false,
       cors: true, // Enable CORS for all requests
     },
-    build: {
-      // Ensure proper handling of JSX files
-      rollupOptions: {
-        input: {
-          main: './index.html',
-        },
-        output: {
-          // Ensure proper MIME types for JavaScript modules
-          format: 'es',
-          entryFileNames: 'assets/[name]-[hash].js',
-          chunkFileNames: 'assets/[name]-[hash].js',
-          assetFileNames: 'assets/[name]-[hash].[ext]',
-        },
-      },
-    },
   };
 
-  // Base path - use root path for custom domain
-  config.base = '/';
+  // Use different base paths for development and production
+  if (command === 'serve') {
+    // Development mode - use root path
+    config.base = '/';
+  } else {
+    // Production mode - use root path for custom domain
+    config.base = '/';
+  }
 
   return config;
 });
