@@ -5,6 +5,7 @@
 @import './styles/black-gold-background.css';
 @import './styles/carpool-page.css';
 @import './styles/tourism-page.css';
+@import './styles/mobile-optimizations.css';
 
 @tailwind base;
 @tailwind components;

@@ -69,8 +69,9 @@ const resources = {
         "companyInfo": "Premium transportation services for discerning clients."
       },
       "contact": {
-        "title": "Contact Us",
+        "title": "Get in Touch",
         "subtitle": "Get in touch",
+        "section_title": "CONTACT",
         "name": "Your Name",
         "email": "Your Email",
         "message": "Your Message",
@@ -590,8 +591,9 @@ const resources = {
         "companyInfo": "خدمات نقل فاخرة للعملاء المميزين."
       },
       "contact": {
-        "title": "اتصل بنا",
+        "title": "تواصل معنا",
         "subtitle": "تواصل معنا",
+        "section_title": "اتصل",
         "name": "الاسم",
         "email": "البريد الإلكتروني",
         "message": "الرسالة",

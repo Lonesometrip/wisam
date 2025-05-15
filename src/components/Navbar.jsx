@@ -163,15 +163,23 @@ const Navbar = () => {
             <img
               src={toggle ? close : menu}
               alt="menu"
-              className="w-[28px] h-[18px] object-contain cursor-pointer mr-3"
+              className="w-[32px] h-[24px] object-contain cursor-pointer mr-3 menu-icon"
               onClick={() => setToggle(!toggle)}
+              aria-label={toggle ? "Close menu" : "Open menu"}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  setToggle(!toggle);
+                }
+              }}
             />
             <div>
               <LanguageSwitcher />
             </div>
             <div
-              className={`p-6 absolute top-14 ${dir === 'rtl' ? 'left-0' : 'right-0'} mx-2 my-2 min-w-[250px] z-10 rounded-xl backdrop-blur-md bg-black/50 border border-white/10 ${
-                toggle ? 'flex' : 'hidden'
+              className={`p-6 absolute top-14 ${dir === 'rtl' ? 'left-0' : 'right-0'} mx-2 my-2 min-w-[280px] z-10 rounded-xl backdrop-blur-md bg-black/80 border-2 border-secondary/30 shadow-lg ${
+                toggle ? 'flex animate-fadeIn' : 'hidden'
               }`}
               style={{ flexDirection: 'column' }}
             >

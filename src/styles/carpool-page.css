@@ -354,10 +354,12 @@
 @media (max-width: 768px) {
   .vehicle-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .features-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .section-title, .cta-title {
@@ -366,5 +368,58 @@
 
   .section-description, .cta-description {
     font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .features-section, .cta-section {
+    padding: 2rem 1.5rem;
+    margin: 3rem 1rem;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .vehicle-image-container {
+    height: 200px;
+  }
+
+  .vehicle-content {
+    padding: 1.2rem;
+  }
+
+  .vehicle-title {
+    font-size: 1.3rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+  }
+
+  .icon-circle {
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+  }
+
+  .feature-title {
+    font-size: 1.2rem;
+  }
+
+  .cta-title {
+    font-size: 1.6rem;
+  }
+
+  .cta-description {
+    font-size: 0.95rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
   }
 }

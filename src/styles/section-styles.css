@@ -2,13 +2,13 @@
 .section-container {
   position: relative;
   overflow: hidden;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem; /* Reduced from 2rem */
 }
 
 /* Section Header Styles */
 .section-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem; /* Reduced from 3rem */
 }
 
 .section-subtitle {
@@ -33,12 +33,12 @@
   width: 120px;
   height: 5px;
   background: linear-gradient(to right, transparent, #D4AF37, transparent);
-  margin: 0.75rem auto 2.5rem;
+  margin: 0.75rem auto 1.5rem; /* Reduced from 2.5rem */
 }
 
 .section-description {
   max-width: 800px;
-  margin: 0 auto 3rem;
+  margin: 0 auto 2rem; /* Reduced from 3rem */
   font-size: 1.1rem;
   line-height: 1.6;
   color: #e0e0e0;
@@ -62,7 +62,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem; /* Reduced from 3rem */
 }
 
 .grid-row {
@@ -72,7 +72,7 @@
 }
 
 .grid-row:last-child {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem; /* Reduced from 4rem */
 }
 
 /* Card Styles */
@@ -169,7 +169,7 @@
 .timeline-container {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 2rem; /* Reduced from 4rem */
 }
 
 /* Contact Styles */

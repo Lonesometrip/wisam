@@ -46,7 +46,7 @@ const Hero = () => {
         </div>
 
         <div>
-          <h1 className={`font-black lg:text-[65px] sm:text-[50px] xs:text-[40px] text-[35px] lg:leading-[80px] mt-2 drop-shadow-[0_5px_5px_rgba(0,0,0,0.5)] tracking-wider uppercase`}>
+          <h1 className={`font-black lg:text-[65px] sm:text-[50px] xs:text-[40px] text-[30px] lg:leading-[80px] sm:leading-[60px] leading-[40px] mt-2 drop-shadow-[0_5px_5px_rgba(0,0,0,0.5)] tracking-wider uppercase`}>
             {language === 'ar' ? (
               // Arabic title with the same color scheme
               <span>
@@ -54,14 +54,15 @@ const Hero = () => {
               </span>
             ) : (
               // English title with SEO keywords
-              <span>
-                <span className="text-white">PREMIUM</span> <span className="text-[#D4AF37]">CHAUFFEUR SERVICE</span>
+              <span className="flex flex-col sm:flex-row sm:items-center">
+                <span className="text-white">PREMIUM</span>
+                <span className="text-[#D4AF37] sm:ml-2">CHAUFFEUR SERVICE</span>
               </span>
             )}
           </h1>
-          <h2 className={`${styles.heroSubText} mt-2 text-white-100 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] flex`}>
+          <h2 className={`${styles.heroSubText} mt-2 text-white-100 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] flex flex-col sm:flex-row`}>
             <span className={language === 'ar' ? 'ml-2' : 'mr-2'}>{t('hero.subtitle')}</span>
-            <div className="text-animation-container">
+            <div className="text-animation-container mt-2 sm:mt-0">
               <AnimatePresence mode="wait">
                 {isAnimating && textPhrases && textPhrases.length > 0 && (
                   <motion.span
@@ -94,7 +95,7 @@ const Hero = () => {
           </h2>
 
           {/* SEO-optimized description paragraph */}
-          <p className="mt-4 text-white-100 max-w-3xl text-[16px] sm:text-[18px] leading-relaxed">
+          <p className="mt-4 text-white-100 max-w-3xl text-[15px] sm:text-[18px] leading-relaxed drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">
             {language === 'ar' ?
               "خدمة سائق فاخر في أوروبا مع سيارات مرسيدس الفئة S وبي إم دبليو الفئة 7 ومرسيدس الفئة V. نقدم خدمات نقل رجال الأعمال، وخدمة نقل من المطار، وخدمة نقل كبار الشخصيات في جميع أنحاء أوروبا. سائق يتحدث العربية متاح على مدار الساعة لتلبية احتياجات النقل الحصرية الخاصة بك." :
               "Luxus Limousinenservice mit Mercedes S-Klasse, BMW 7 und V-Klasse. Wir bieten Business Chauffeur Service, Airport Transfer und VIP Service in ganz Deutschland. 24/7 verfügbar für Ihre exklusiven Transportbedürfnisse."

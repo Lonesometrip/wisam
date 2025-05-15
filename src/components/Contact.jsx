@@ -111,13 +111,17 @@ const Contact = () => {
 
   return (
     <div className="section-container">
+      <div className="section-header">
+        <h2 className="section-title" style={{ fontSize: '4rem', fontWeight: '800', letterSpacing: '0.05em' }}>{t('contact.section_title')}</h2>
+        <div className="section-title-underline"></div>
+      </div>
+
       <div className="contact-container">
         <motion.div
           variants={slideIn(dir === 'rtl' ? "right" : "left", "tween", 0.2, 1)}
           className="contact-form-container"
         >
           <div className="section-header">
-            <p className="section-subtitle">{t('contact.subtitle')}</p>
             <h3 className="section-title">{t('contact.title')}</h3>
             <div className="section-title-underline"></div>
           </div>

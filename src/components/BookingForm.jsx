@@ -232,7 +232,6 @@ const BookingForm = () => {
   return (
     <div className="w-full h-full bg-black rounded-2xl p-6 overflow-y-auto shadow-card border border-[#D4AF37]">
       <div className="section-header">
-        <p className="section-subtitle">GET IN TOUCH</p>
         <h3 className="section-title text-[#D4AF37]">{t('booking.title')}</h3>
         <div className="section-title-underline"></div>
       </div>
