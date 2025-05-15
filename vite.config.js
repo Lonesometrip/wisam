@@ -23,8 +23,8 @@ export default defineConfig(({ command }) => {
     // Development mode - use root path
     config.base = '/';
   } else {
-    // Production mode - use root path for custom domain
-    config.base = '/';
+    // Production mode - use repository name for GitHub Pages
+    config.base = '/wisam/';
   }
 
   return config;

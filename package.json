@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://www.premium-chauffeur.com/",
+  "homepage": "https://lonesometrip.github.io/wisam/",
   "scripts": {
     "dev": "vite",
     "update-sitemap": "node scripts/update-sitemap.js",
@@ -11,7 +11,7 @@
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "predeploy": "npm run build && echo www.premium-chauffeur.com > dist/CNAME",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
