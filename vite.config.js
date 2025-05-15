@@ -16,16 +16,18 @@ export default defineConfig(({ command }) => {
       strictPort: false,
       cors: true, // Enable CORS for all requests
     },
+    build: {
+      // Ensure proper handling of JSX files
+      rollupOptions: {
+        input: {
+          main: './index.html',
+        },
+      },
+    },
   };
 
-  // Use different base paths for development and production
-  if (command === 'serve') {
-    // Development mode - use root path
-    config.base = '/';
-  } else {
-    // Production mode - use repository name for GitHub Pages
-    config.base = '/wisam/';
-  }
+  // Base path for GitHub Pages
+  config.base = '/wisam/';
 
   return config;
 });
